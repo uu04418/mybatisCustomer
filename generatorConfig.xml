@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<context id="testTables" targetRuntime="MyBatis3">
+		<commentGenerator type="MyCommentGenerator">
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://120.24.43.56:3306/zhaofang" userId="zhaofang"
+			password="123456">
+		</jdbcConnection>
+		<!-- <jdbcConnection driverClass="oracle.jdbc.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:yycg" 
+			userId="yycg"
+			password="yycg">
+		</jdbcConnection> -->
+
+		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和 
+			NUMERIC 类型解析为java.math.BigDecimal -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- targetProject:生成PO类的位置 -->
+		<javaModelGenerator targetPackage="com.manager.web.pojo"
+			targetProject=".\src">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+			<!-- 从数据库返回的值被清理前后的空格 -->
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		
+        <!-- targetProject:mapper映射文件生成的位置 -->
+		<sqlMapGenerator targetPackage="com.manager.web.mapper" 
+			targetProject=".\src">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<!-- targetPackage：mapper接口生成的位置 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.manager.web.mapper" 
+			targetProject=".\src">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+		
+		
+		
+		<!-- 1 权限控制表-->
+		<table tableName="access">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 2 户型表-->
+		<table tableName="apartment">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 3  区域控制-->
+		<table tableName="area">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 4  部落物品控制表-->
+		<table tableName="article">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 5  部落物品详情表-->
+		<table tableName="articledetail">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 6  部落物品发布类别表-->
+		<table tableName="articletype">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 7  房东委托表-->
+		<table tableName="authorize">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 8  品牌控制表-->
+		<table tableName="brand">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 9  品牌对应用户控制表-->
+		<table tableName="branduser">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 10  经纪人表-->
+		<table tableName="broker">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 11 浏览量表-->
+		<table tableName="browse">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 12  楼栋表-->
+		<table tableName="building">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 13  求购表-->
+		<table tableName="buy">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 14  年份日历表-->
+		<table tableName="calendar">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 15  租客来源表-->
+		<table tableName="centfrom">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 16  验证码表-->
+		<table tableName="code">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 17  评论表[目前无用]-->
+		<table tableName="comments">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 18 评论回复表[目前无用]-->
+		<table tableName="commentsreply">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 19 消费明细表-->
+		<table tableName="consume">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 20 收货地址表-->
+		<table tableName="delivery">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 21 详情地址表-->
+		<table tableName="detaileaddress">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 22 收藏表-->
+		<table tableName="enshrine">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 23  粉丝表-->
+		<table tableName="fans">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+
+		<!-- 24  财务类型控制表-->
+		<table tableName="finance">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 25  财务类型控制表-->
+		<table tableName="furniture">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 26  历史租约表-->
+		<table tableName="historycent">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 27  历史EXCLE表-->
+		<table tableName="historyexcle">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 28  历史 水电煤气抄表-->
+		<table tableName="historymeter">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 29  水电煤和账单表关系-->
+		<table tableName="historymeter_housepay">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 30  房源信息表-->
+		<table tableName="house">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 31  总账单表-->
+		<table tableName="housepay">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 32  租客入驻人信息表-->
+		<table tableName="housepersion">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+
+		<!-- 33  房源基础设施表-->
+		<table tableName="housetag">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 34  房源对应的水电煤气单价表-->
+		<table tableName="hydcoal">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 35  金币总表-->
+		<table tableName="inteconn">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 36  金币获得和消费明细表-->
+		<table tableName="integral">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 37 用户和邀请人关联表-->
+		<table tableName="invite">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 38 房东对应楼栋的水电单价配置表-->
+		<table tableName="landbuilding">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 39 房东信息表-->
+		<table tableName="landlord">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 40 房东和经纪人关系表-->
+		<table tableName="landmanager">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 41 收益详情表-->
+		<table tableName="lucre">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 42 通讯录-->
+		<table tableName="maillist">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 43 后台管理和用户关系表-->
+		<table tableName="manage_user">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 44 留言表-->
+		<table tableName="messages">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 45 留言回复表-->
+		<table tableName="messagesreply">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 46  地铁表-->
+		<table tableName="metro">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 47  我的合同模板-->
+		<table tableName="mycent">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 48  我的订单-->
+		<table tableName="myorder">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 49  融云控制表【停用】-->
+		<table tableName="rongconn">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		
+		<!-- 50 数字-->
+		<table tableName="num">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 51 物品二级分类规格参数表-->
+		<table tableName="parametype">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 52 分期账单表-->
+		<table tableName="payexpert">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 53 支付方式表-->
+		<table tableName="paymodal">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 54  发帖子表-->
+		<table tableName="post">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 55  价格表-->
+		<table tableName="price">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 56  用户详情资料表-->
+		<table tableName="profile">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 57  房源类型表-->
+		<table tableName="property">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 58  求租表-->
+		<table tableName="qiuzu">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 59 问答表 [目前无用]-->
+		<table tableName="questions">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+
+		<!-- 60 物品规格参数对应价格唯一约束表-->
+		<table tableName="releasetable">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 61 【】-->
+		<table tableName="releasetype">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 62  收租日规则表-->
+		<table tableName="rentmodal">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 63  角色表-->
+		<table tableName="role">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 64  角色权限控制表-->
+		<table tableName="role_access">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 65  融云表【停用】-->
+		<table tableName="rong">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		
+		<!-- 66  融云组【停用】-->
+		<table tableName="ronggroup">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 67  公众号二维码对应管理-->
+		<table tableName="sceneuser">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 68  店主表-->
+		<table tableName="store">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 69  物品对应店铺控制-->
+		<table tableName="storeconn">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 70  意见反馈表-->
+		<table tableName="sugges">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 71  系统默认参数控制-->
+		<table tableName="systemstate">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 72  部落表-->
+		<table tableName="tribe">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 73  部落控制表-->
+		<table tableName="tribecontroller">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 74  部落通知-->
+		<table tableName="tribenotice">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 75  地区类型部落类型-->
+		<table tableName="tribetype">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		
+		<!-- 76  用户表-->
+		<table tableName="user">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 77  用户表对应角色-->
+		<table tableName="user_role">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 78  租约登记表-->
+		<table tableName="usercent">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 79  融云好友关系【停用】-->
+		<table tableName="userconn">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 80  部落签到表-->
+		<table tableName="usersign">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 81  小区表-->
+		<table tableName="village">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 82  用户余额-->
+		<table tableName="vipcount">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 83  扫描公众号微信用户信息表-->
+		<table tableName="weixinUserInfo">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 84  点赞表-->
+		<table tableName="zan">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		<!-- 85  物品对应的规格参数-->
+		<table tableName="typedetail">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+		
+		
+		
+		
+		
+		
+	</context>
+</generatorConfiguration>
